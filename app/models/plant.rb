@@ -1,4 +1,5 @@
 class Plant < ApplicationRecord
     has_many :comments
-    belongs_to :User
+    belongs_to :user
+    
 end
