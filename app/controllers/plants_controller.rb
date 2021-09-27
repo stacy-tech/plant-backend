@@ -18,10 +18,16 @@ class PlantsController < ApplicationController
         render json: plant
     end
 
+    # delete/plants
+    def destroy 
+        plant = Plant.find(params[:id])
+        plant.destroy  
+    end
+
     private
 
     def plant_params
-        params.require(:plant).permit(:name, :difficulty, :light, :water, :image_url, :user_id, :name)
+        params.require(:plant).permit(:name, :difficulty, :light, :water, :image_url, :user_id, :user)
     end
 
 end
